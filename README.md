@@ -17,7 +17,12 @@ ___
 
 - 2005년 당시 신 동아화제가 차세대 시스템 구축을 위해 제안한 RFP를 기반으로 요구사항을 분석, 설계하여 보험사 시스템을 설계하였다.
 - 모든 코드는 JAVA로 이이루어져 있으며 일체의 프레임 워크를 사용하지 않았다.
-
+## Service 구현
+### 구현 방법
+* ServiceIF에 먼저 함수를 정의하고 Service에 Override한 후 구현 (ServiceIF에 함수 정의할 때 throws RemoteException 해줄 것)
+* Service에 필요한 ListImpl은 필드에 private final로 선언하고 생성자 파라미터로 받아서 주입
+* Service를 구현하는데 필요한 ListImpl의 함수도 구현
+* Service 함수 구현할 때 ListImpl로부터 가져온 데이터가 null인 경우 NoDataException, 가져온 리스트가 비어있는 경우 EmptyListException 던질 것 (TimeDelayException은 나중에)
 ## 구조
 - 분산시스템을 활용하기 위해 rmi 통신을 사용하여 9개의 서버와 1개의 클라이언트, DB는 MySQL로 이루어져 있다.
 - 서버는 CompensateServer, AccidentServer, PayServer, ContractServer, CustomerServer, EmployeeServer, InsuranceServer, CalculationFormulaServer, SaleServer로 구성되어 있다.
