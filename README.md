@@ -24,4 +24,20 @@ ___
 - DB의 테이블은 도메인 1개당 1개의 테이블로 설정하였다.
 - 여러 server 사이의 통신을 위해 Service Container가 존재한다.
 ---
+### 파트
+* 김남훈
+  * PayServiceIF & PaySerivce (요금을 납부하다)
+  * ReportAccidentIF & ReportAccident (사고를 접수하다)
+  * DB 설계 및 연결
+* 성유진
+  * CompensateServiceIF & CompensateService (보상을 결정하다)
+  * MakePolicyServiceIF & MakePolicyService (보상지침을 수립하다)
+* 이우성
+  * ApplyInsuranceServiceIF & ApplayInsuranceService (보험가입을 신청하다)
+  * UnderwriteServiceIF & UnderwriteService (인수심사를 하다)
+  * Console UI 제작
+* 최성훈
+  * ConcludeServiceIF & ConcludeService (계약을 체결하다)
+  * OfferServiceIF & OfferService (보험을 제안하다)
+---
 - 현재 해당 코드를 JAVA Spring, REACT 프레임워크를 사용하여 웹 개발로 refactoring 완료
